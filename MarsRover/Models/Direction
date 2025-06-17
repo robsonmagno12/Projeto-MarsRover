@@ -1,0 +1,13 @@
+namespace Rover.Models
+{
+    public enum Direction { N, E, S, W }
+
+    public static class DirectionHelper
+    {
+        public static Direction TurnLeft(this Direction dir) =>
+            (Direction)(((int)dir + 3) % 4);
+
+        public static Direction TurnRight(this Direction dir) =>
+            (Direction)(((int)dir + 1) % 4);
+    }
+}

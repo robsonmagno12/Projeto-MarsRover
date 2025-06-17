@@ -1,0 +1,5 @@
+H:\Project\Rover\obj\Debug\net9.0\Rover.GeneratedMSBuildEditorConfig.editorconfig
+H:\Project\Rover\obj\Debug\net9.0\Rover.AssemblyInfoInputs.cache
+H:\Project\Rover\obj\Debug\net9.0\Rover.AssemblyInfo.cs
+H:\Project\Rover\obj\Debug\net9.0\Rover.csproj.CoreCompileInputs.cache
+H:\Project\Rover\obj\Debug\net9.0\Rover.MvcApplicationPartsAssemblyInfo.cache

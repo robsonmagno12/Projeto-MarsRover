@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+
+namespace Rover.Models
+{
+    public class Plateau
+    {
+        public int MaxX { get; }
+        public int MaxY { get; }
+
+        private readonly HashSet<Position> _occupied = new();
+
+        public Plateau(int maxX, int maxY)
+        {
+            MaxX = maxX;
+            MaxY = maxY;
+        }
+
+        public bool IsInside(Position pos) =>
+            pos.X >= 0 && pos.X <= MaxX && pos.Y >= 0 && pos.Y <= MaxY;
+
+        public bool IsOccupied(Position pos) => _occupied.Contains(pos);
+
+        public bool TryMove(Position current, Position next)
+        {
+            if (!IsInside(next))
+                return false;
+
+            if (IsOccupied(next))
+                return false;
+
+            _occupied.Remove(current);
+            _occupied.Add(next);
+            return true;
+        }
+
+        public void Register(Position pos)
+        {
+            if (IsOccupied(pos))
+                throw new InvalidOperationException($"Posição {pos} já ocupada.");
+            _occupied.Add(pos);
+        }
+    }
+}
